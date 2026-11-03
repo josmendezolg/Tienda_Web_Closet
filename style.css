@@ -1,0 +1,90 @@
+/* ===== Variables: paleta con psicología del color ===== */
+:root {
+  --primary: #007BFF;   /* confianza y acción */
+  --success: #28A745;   /* éxito y compra */
+  --bg: #FFFFFF;        /* limpieza */
+  --text: #343A40;      /* legibilidad */
+}
+
+body {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== Cabecera ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #0056b3);
+  color: #fff;
+}
+
+/* ===== Tarjetas de producto ===== */
+.product-card {
+  height: 100%;
+  border: 1px solid #e9ecef;
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: fadeUp .5s ease both;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+}
+.product-card img {
+  height: 200px;
+  object-fit: contain;   /* no deforma la imagen */
+  padding: 1rem;
+}
+.product-title {
+  font-size: .95rem;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* máximo 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8em;
+}
+.price {
+  color: var(--success);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ===== Modal ===== */
+.modal-img {
+  max-height: 280px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.qty-group { max-width: 150px; }
+
+/* ===== Carrito ===== */
+.cart-item {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  padding: .75rem 0;
+  border-bottom: 1px solid #eee;
+  animation: fadeUp .3s ease both;
+}
+.cart-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.cart-item .info { flex: 1; min-width: 0; }
+.cart-item .name {
+  font-size: .85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Botones ===== */
+.btn-success, .btn-primary { transition: transform .15s ease; }
+.btn-success:hover, .btn-primary:hover { transform: scale(1.03); }
+
+/* ===== Animación ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
